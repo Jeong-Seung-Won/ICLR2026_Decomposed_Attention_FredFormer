@@ -1,4 +1,4 @@
-# TT-based Time Series Forecasting
+# Decomposed Attention FredFormer for Orbit Prediction
 
 A PyTorch implementation of time series forecasting using Tensor Train (TT) decomposition with transformer architecture for efficient multivariate time series prediction.
 
