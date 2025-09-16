@@ -2,7 +2,7 @@
 
 A PyTorch implementation of time series forecasting using Tensor Train (TT) decomposition with transformer architecture for efficient multivariate time series prediction.
 
-## 🚀 Overview
+## Overview
 
 This project implements a novel approach to time series forecasting that combines:
 - **Tensor Train (TT) decomposition** for parameter-efficient linear transformations
@@ -10,7 +10,7 @@ This project implements a novel approach to time series forecasting that combine
 - **Transformer-based architecture** with multi-head attention
 - **Channel-wise positional embeddings** for multivariate time series
 
-## 🏗️ Architecture
+## Architecture
 
 The model consists of several key components:
 
@@ -28,7 +28,7 @@ The model consists of several key components:
 - Applies positional embeddings for each variable/channel
 - Processes multivariate time series with channel-wise attention
 
-## 📋 Requirements
+## Requirements
 
 ```
 torch >= 1.9.0
@@ -40,7 +40,7 @@ scikit-learn
 einops
 ```
 
-## 🔧 Installation
+## Installation
 
 ```bash
 git clone <repository-url>
@@ -48,7 +48,7 @@ cd tt-time-series-forecasting
 pip install -r requirements.txt
 ```
 
-## 📊 Model Configuration
+## Model Configuration
 
 The model is configured in `config.py`:
 
@@ -70,7 +70,7 @@ ours_tt_cfg = SimpleNamespace(
 )
 ```
 
-## 🏃‍♂️ Usage
+## Usage
 
 ### Quick Start
 
@@ -112,7 +112,7 @@ Data should be preprocessed with:
 - Stored as PyTorch tensor files (`.pt`)
 - Metadata CSV files listing file paths
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── config.py          # Model configurations and registry
@@ -122,7 +122,7 @@ Data should be preprocessed with:
 └── README.md          # This file
 ```
 
-## 🔍 Key Features
+## Key Features
 
 ### Tensor Train Decomposition
 - **Parameter Efficiency**: Reduces parameter count through low-rank decomposition
@@ -139,7 +139,7 @@ Data should be preprocessed with:
 - **Positional Embeddings**: Learned positional encodings for each variable
 - **Scalable Architecture**: Configurable depth and attention heads
 
-## 🎯 Performance
+## Performance
 
 The model is evaluated using:
 - **MSE Loss**: Mean Squared Error for training and validation
@@ -157,7 +157,7 @@ Test  batches : 300
 Finished ours_tt    → Test MSE: 0.00087654  |  MAE: 0.02134567
 ```
 
-## 🛠️ Customization
+## Customization
 
 ### Adding New Models
 1. Implement your model class in `DAF.py`
@@ -169,26 +169,15 @@ Finished ours_tt    → Test MSE: 0.00087654  |  MAE: 0.02134567
 - Modify transformer depth and attention heads
 - Tune learning rate and batch size in `main.py`
 
-## 📝 Citation
+## Citation
 
 If you use this code in your research, please cite:
 ```bibtex
-@misc{tt-time-series-forecasting,
-  title={Tensor Train Decomposition for Time Series Forecasting},
-  author={Your Name},
-  year={2024},
-  url={https://github.com/your-username/tt-time-series-forecasting}
+@misc{DAF,
+  title={Decomposed Attention FredFormer: Large Time-series Prediction Model for Satellite Orbit Prediction},
+  author={Seungwon Jeong, Kangjun Lee, Jounu Park, Simon S. Woo, Yujin Shin},
+  year={2025},
+  url={[https://github.com/your-username/tt-time-series-forecasting](https://github.com/Jeong-Seung-Won/ICLR2026_Decomposed_Attention_FredFormer)}
 }
 ```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📧 Contact
-
-For questions or issues, please open an issue on GitHub or contact [your-email@domain.com].
+For questions or issues, please open an issue on GitHub or contact [bbigaa123@g.skku.edu].
