@@ -6,44 +6,14 @@ A PyTorch implementation of time series forecasting using Tensor Train (TT) deco
 
 This project implements a novel approach to time series forecasting that combines:
 - **Tensor Train (TT) decomposition** for parameter-efficient linear transformations
-- **Frequency domain processing** using FFT/IFFT operations
+- **Frequency domain processing** using RFFT/IRFFT operations
 - **Transformer-based architecture** with multi-head attention
 - **Channel-wise positional embeddings** for multivariate time series
-
-## Architecture
-
-The model consists of several key components:
-
-### 1. TT-based Multi-head Attention (`TTMultiheadAttention`)
-- Uses Matrix Product State (MPS) decomposition via TensorLy
-- Reduces parameter count while maintaining model expressivity
-- Configurable tensor ranks for compression control
-
-### 2. Frequency Domain Processing (`FredformerBackbone`)
-- Converts time series to frequency domain using `torch.fft.rfft`
-- Processes real and imaginary components separately
-- Reconstructs predictions in time domain using `torch.fft.irfft`
-
-### 3. Channel Transformer (`Trans_C`)
-- Applies positional embeddings for each variable/channel
-- Processes multivariate time series with channel-wise attention
-
-## Requirements
-
-```
-torch >= 1.9.0
-numpy
-tensorly
-pandas
-matplotlib
-scikit-learn
-einops
-```
 
 ## Installation
 
 ```bash
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/Jeong-Seung-Won/ICLR2026_Decomposed_Attention_FredFormer)
 cd tt-time-series-forecasting
 pip install -r requirements.txt
 ```
@@ -122,30 +92,6 @@ Data should be preprocessed with:
 └── README.md          # This file
 ```
 
-## Key Features
-
-### Tensor Train Decomposition
-- **Parameter Efficiency**: Reduces parameter count through low-rank decomposition
-- **Configurable Compression**: Adjustable tensor ranks for different compression levels
-- **Maintained Expressivity**: Preserves model capacity while reducing parameters
-
-### Frequency Domain Processing
-- **FFT-based**: Leverages frequency domain for efficient processing
-- **Complex Reconstruction**: Processes real and imaginary components separately
-- **Flexible Window Sizes**: Supports different input/output sequence lengths
-
-### Multi-head Attention
-- **Channel-wise Processing**: Applies attention across channels/variables
-- **Positional Embeddings**: Learned positional encodings for each variable
-- **Scalable Architecture**: Configurable depth and attention heads
-
-## Performance
-
-The model is evaluated using:
-- **MSE Loss**: Mean Squared Error for training and validation
-- **MAE Loss**: Mean Absolute Error for comprehensive evaluation
-- **Early Stopping**: Prevents overfitting with patience mechanism
-
 Example output:
 ```
 ours_tt         →  123,456 parameters
@@ -153,8 +99,8 @@ Train batches : 1000
 Val   batches : 200
 Test  batches : 300
 
-[ours_tt] Ep 25/50 | Train MSE 0.00123456 | Val MSE 0.00098765 | 12.34s
-Finished ours_tt    → Test MSE: 0.00087654  |  MAE: 0.02134567
+[ours_tt] Ep 25/50 | Train MSE 0.0012345 | Val MSE 0.00012345 | 12.34s
+Finished ours_tt    → Test MSE: 0.00012345  |  MAE: 0.0012345
 ```
 
 ## Customization
