@@ -13,7 +13,7 @@ This project implements a novel approach to time series forecasting that combine
 ## Installation
 
 ```bash
-git clone [<repository-url>](https://github.com/Jeong-Seung-Won/ICLR2026_Decomposed_Attention_FredFormer)
+git clone https://github.com/Jeong-Seung-Won/ICLR2026_Decomposed_Attention_FredFormer
 cd tt-time-series-forecasting
 pip install -r requirements.txt
 ```
